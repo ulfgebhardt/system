@@ -1,7 +1,7 @@
 <?php
 namespace SYSTEM\DBD;
 
-class SYS_SAIMOD_TODO_EXCEPTION_INSERT extends \SYSTEM\DB\QP {
+class SYS_SAIMOD_TODO_USER_EXCEPTION_INSERT extends \SYSTEM\DB\QP {
     protected static function query(){
         return new \SYSTEM\DB\QQuery(get_class(),
 //pg            
@@ -13,8 +13,8 @@ class SYS_SAIMOD_TODO_EXCEPTION_INSERT extends \SYSTEM\DB\QP {
     \SYSTEM\DBD\system_todo::FIELD_SERVER_NAME.'","'.\SYSTEM\DBD\system_todo::FIELD_SERVER_PORT.'","'.
     \SYSTEM\DBD\system_todo::FIELD_REQUEST_URI.'","'.\SYSTEM\DBD\system_todo::FIELD_POST.'","'.
     \SYSTEM\DBD\system_todo::FIELD_HTTP_REFERER.'","'.\SYSTEM\DBD\system_todo::FIELD_HTTP_USER_AGENT.'","'.
-    \SYSTEM\DBD\system_todo::FIELD_USER.'","'.\SYSTEM\DBD\system_todo::FIELD_THROWN.'","'.\SYSTEM\DBD\system_todo::FIELD_MESSAGE_HASH.'")'.
-'VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, SHA1($2))'.
+    \SYSTEM\DBD\system_todo::FIELD_USER.'","'.\SYSTEM\DBD\system_todo::FIELD_THROWN.'","'.\SYSTEM\DBD\system_todo::FIELD_MESSAGE_HASH.'","'.\SYSTEM\DBD\system_todo::FIELD_TYPE.'")'.
+'VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, SHA1($2), '.\SYSTEM\DBD\system_todo::FIELD_TYPE_USER.')'.
 'ON DUPLICATE KEY UPDATE '.\SYSTEM\DBD\system_todo::FIELD_COUNT.'='.\SYSTEM\DBD\system_todo::FIELD_COUNT.'+1, '.\SYSTEM\DBD\system_todo::FIELD_TIME.'=VALUES('.\SYSTEM\DBD\system_todo::FIELD_TIME.'), '.\SYSTEM\DBD\system_todo::FIELD_STATE.'='.\SYSTEM\DBD\system_todo::FIELD_STATE_OPEN.';',
 //mys
 'INSERT INTO '.\SYSTEM\DBD\system_todo::NAME_MYS.
@@ -26,7 +26,8 @@ class SYS_SAIMOD_TODO_EXCEPTION_INSERT extends \SYSTEM\DB\QP {
     \SYSTEM\DBD\system_todo::FIELD_SERVER_PORT.','.\SYSTEM\DBD\system_todo::FIELD_REQUEST_URI.','.
     \SYSTEM\DBD\system_todo::FIELD_POST.','.\SYSTEM\DBD\system_todo::FIELD_HTTP_REFERER.','.
     \SYSTEM\DBD\system_todo::FIELD_HTTP_USER_AGENT.','.\SYSTEM\DBD\system_todo::FIELD_USER.','.
-    \SYSTEM\DBD\system_todo::FIELD_THROWN.','.\SYSTEM\DBD\system_todo::FIELD_MESSAGE_HASH.')'.
-'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SHA1(?))'.
+    \SYSTEM\DBD\system_todo::FIELD_THROWN.','.\SYSTEM\DBD\system_todo::FIELD_MESSAGE_HASH.','.
+    \SYSTEM\DBD\system_todo::FIELD_TYPE.')'.
+'VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, SHA1(?), '.\SYSTEM\DBD\system_todo::FIELD_TYPE_USER.')'.
 'ON DUPLICATE KEY UPDATE '.\SYSTEM\DBD\system_todo::FIELD_COUNT.'='.\SYSTEM\DBD\system_todo::FIELD_COUNT.'+1, '.\SYSTEM\DBD\system_todo::FIELD_TIME.'=VALUES('.\SYSTEM\DBD\system_todo::FIELD_TIME.'), '.\SYSTEM\DBD\system_todo::FIELD_STATE.'='.\SYSTEM\DBD\system_todo::FIELD_STATE_OPEN.';'
 );}}
