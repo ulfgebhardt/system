@@ -1,2 +1,0 @@
-<?php
-class DEPRECATED extends \SYSTEM\LOG\DEPRECATED {}

@@ -1,1 +1,0 @@
-INSERT INTO system.cron (class, min, hour, day, day_week, month, last_run, status) VALUES ('\SYSTEM\CRON\cron_log2sqlite', 0, 0, 0, 0, 0, NULL, 0);

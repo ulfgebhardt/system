@@ -1,9 +1,0 @@
-CREATE TABLE `system_cache` (
-	`ID` INT(10) NOT NULL AUTO_INCREMENT,
-	`CacheID` INT(10) NOT NULL,
-	`Ident` CHAR(255) NOT NULL,
-	`data` BINARY(255) NOT NULL,
-	PRIMARY KEY (`ID`)
-)
-COLLATE='utf8_general_ci'
-ENGINE=MyISAM;

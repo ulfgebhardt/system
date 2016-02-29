@@ -1,4 +1,0 @@
-<?php
-namespace SYSTEM\LOG;
-
-class SHUTDOWN_EXCEPTION extends \SYSTEM\LOG\SYSTEM_ERROR_EXCEPTION {}
